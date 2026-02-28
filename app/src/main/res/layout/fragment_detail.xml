@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
+
     <ImageView
         android:id="@+id/ivDetailImage"
         android:layout_width="match_parent"
@@ -47,5 +48,18 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="16dp"
+        android:background="#66000000"
+        android:padding="8dp"
+        android:src="@android:drawable/ic_menu_revert"
+        android:elevation="5dp"
+        app:tint="#FFFFFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

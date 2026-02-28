@@ -28,7 +28,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // 1. Instanciamos el Presentador
+        // 1. Inicializamos el Presentador
         presenter = HomePresenter(this)
 
         // 2. Configuramos el RecyclerView (en grilla de 2 columnas para que se vea como catálogo)
@@ -42,12 +42,10 @@ class HomeFragment : Fragment(), HomeContract.View {
             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
         }
     }
-
-    // 4. Esta función la llama el Presentador cuando tiene la lista lista
     override fun showShoes(shoes: List<Item>) {
         adapter = ShoeAdapter(shoes) { zapatillaSeleccionada ->
 
-            // Creamos un paquete (Bundle) con la zapatilla seleccionada
+            // Creamos un paquete con la zapatilla seleccionada
             val bundle = Bundle().apply {
                 putSerializable("zapatilla", zapatillaSeleccionada)
             }

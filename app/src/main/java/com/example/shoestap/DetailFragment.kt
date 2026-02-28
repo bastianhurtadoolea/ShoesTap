@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController // <-- ¡Míralo aquí arriba, con sus amigos los imports!
 import com.bumptech.glide.Glide
 import com.example.shoestap.databinding.FragmentDetailBinding
 
@@ -24,6 +25,11 @@ class DetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        // Configuramos la flecha manual de volver atrás
+        binding.btnBack.setOnClickListener {
+            findNavController().navigateUp()
+        }
 
         // 1. Recibimos el objeto mediante Bundle (como pide la rúbrica)
         val zapatilla = arguments?.getSerializable("zapatilla") as? Item
