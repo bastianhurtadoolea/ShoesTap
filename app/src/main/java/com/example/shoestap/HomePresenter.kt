@@ -6,7 +6,7 @@ class HomePresenter(private val view: HomeContract.View) : HomeContract.Presente
         // Aquí el Presenter le pide los datos al Modelo
         val shoeList = ShoeProvider.returnShoeList()
 
-        // Y se los entrega a la Vista (El Fragmento)
+        // Y se los entrega a la Vista
         view.showShoes(shoeList)
     }
 }

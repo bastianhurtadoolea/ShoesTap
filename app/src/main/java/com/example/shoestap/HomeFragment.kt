@@ -37,7 +37,7 @@ class HomeFragment : Fragment(), HomeContract.View {
         // 3. Le pedimos al presentador que cargue los datos
         presenter.loadShoes()
 
-        // 🚀 NUEVO: Configuramos el clic del botón flotante para ir al Carrito
+        // 🚀 Configuramos el clic del botón flotante para ir al Carrito
         binding.fabCart.setOnClickListener {
             findNavController().navigate(R.id.action_homeFragment_to_cartFragment)
         }
@@ -47,7 +47,7 @@ class HomeFragment : Fragment(), HomeContract.View {
     override fun showShoes(shoes: List<Item>) {
         adapter = ShoeAdapter(shoes) { zapatillaSeleccionada ->
 
-            // Creamos un paquete (Bundle) con la zapatilla seleccionada (Requisito de la rúbrica)
+            // Creamos un paquete (Bundle) con la zapatilla seleccionada
             val bundle = Bundle().apply {
                 putSerializable("zapatilla", zapatillaSeleccionada)
             }
